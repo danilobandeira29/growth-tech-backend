@@ -1,6 +1,6 @@
 import { AbstractUserRepository } from '@/infra/repository/interfaces/AbstractUserRepository'
-import { AbstractCreateUser, User } from 'domain/usecases/CreateUser'
-import { UserEntity } from 'domain/user/UserEntity'
+import { AbstractCreateUser, User } from '@/domain/user/usecases/CreateUser'
+import { UserEntity } from '@/domain/user/entity/UserEntity'
 
 export class CreateUserService implements AbstractCreateUser {
 	constructor(
