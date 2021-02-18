@@ -8,7 +8,7 @@ let createPostService: CreatePostService
 let spyFindOneByIdFromFakeUserRepository: jest.SpyInstance
 
 describe('Create User Service', () => {
-	beforeAll(() => {
+	beforeEach(() => {
 		fakePostRepository = new FakePostRepository()
 		fakeUserRepository = new FakeUserRepository()
 		createPostService = new CreatePostService(
@@ -30,6 +30,20 @@ describe('Create User Service', () => {
 		const post = await createPostService.execute(newPost)
 
 		expect(Number.isNaN(post.id)).toBe(false)
+		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledTimes(1)
+		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledWith(
+			newPost.userId,
+		)
+	})
+
+	it('should not be able to create a new post with no existing user', async () => {
+		const newPost = {
+			userId: 120,
+			title: 'title post',
+			body: 'title body',
+		}
+
+		await expect(createPostService.execute(newPost)).rejects.toThrowError()
 		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledTimes(1)
 		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledWith(
 			newPost.userId,
