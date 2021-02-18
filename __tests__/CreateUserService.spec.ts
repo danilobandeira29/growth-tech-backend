@@ -1,7 +1,19 @@
 import { CreateUserService } from '../src/data/user/services/CreateUserService'
 import { FakeUserRepository } from '../src/infra/repository/fakes/FakeUserRepository'
 
+let fakeUserRespository: FakeUserRepository
+let createUserService: CreateUserService
+let spyFindOneByEmailFromFakeUserRepository: jest.SpyInstance
+
 describe('Create User Service', () => {
+	beforeAll(() => {
+		fakeUserRespository = new FakeUserRepository()
+		createUserService = new CreateUserService(fakeUserRespository)
+		spyFindOneByEmailFromFakeUserRepository = jest.spyOn(
+			fakeUserRespository,
+			'findOneByEmail',
+		)
+	})
 	it('should be able to create a new user', async () => {
 		const newUser = {
 			name: 'Danilo Bandeira',
@@ -26,10 +38,12 @@ describe('Create User Service', () => {
 			},
 		}
 
-		const fakeUserRespository = new FakeUserRepository()
-		const createUserService = new CreateUserService(fakeUserRespository)
 		const user = await createUserService.execute(newUser)
 
 		expect(Number.isNaN(user.id)).toBe(false)
+		expect(spyFindOneByEmailFromFakeUserRepository).toHaveBeenCalledTimes(1)
+		expect(spyFindOneByEmailFromFakeUserRepository).toHaveBeenCalledWith(
+			newUser.email,
+		)
 	})
 })
