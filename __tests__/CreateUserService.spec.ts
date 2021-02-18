@@ -6,7 +6,7 @@ let createUserService: CreateUserService
 let spyFindOneByEmailFromFakeUserRepository: jest.SpyInstance
 
 describe('Create User Service', () => {
-	beforeAll(() => {
+	beforeEach(() => {
 		fakeUserRespository = new FakeUserRepository()
 		createUserService = new CreateUserService(fakeUserRespository)
 		spyFindOneByEmailFromFakeUserRepository = jest.spyOn(
@@ -16,9 +16,9 @@ describe('Create User Service', () => {
 	})
 	it('should be able to create a new user', async () => {
 		const newUser = {
-			name: 'Danilo Bandeira',
-			username: 'Bandeira',
-			email: 'danilobandeira29@gmail.com',
+			name: 'John Doe',
+			username: 'Doe',
+			email: 'johndoe@test.com',
 			address: {
 				street: 'Kulas Light',
 				suite: 'Apt. 10',
