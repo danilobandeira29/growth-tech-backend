@@ -1,5 +1,5 @@
 import { CreateUserService } from '../src/data/user/services/CreateUserService'
-import { FakeUserRepository } from '../src/infra/repository/FakeUserRepository'
+import { FakeUserRepository } from '../src/infra/repository/fakes/FakeUserRepository'
 
 describe('Create User Service', () => {
 	it('should be able to create a new user', async () => {
