@@ -1,6 +1,6 @@
 import { AbstractLoadAllPost } from '@/domain/post/usecases/AbstractLoadAllPost'
 import { Post } from '@/domain/post/usecases/AbstractCreatePost'
-import { AbstractLoadAllPostRepository } from '@/infra/repository/interfaces/AbstractLoadPostRepository'
+import { AbstractLoadAllPostRepository } from '@/infra/repository/interfaces/AbstractLoadAllPostRepository'
 import { OutputLoadAllPostRepository } from '@/infra/repository/dtos/OutputLoadAllPostRepository'
 
 export class LoadAllPostService implements AbstractLoadAllPost {
