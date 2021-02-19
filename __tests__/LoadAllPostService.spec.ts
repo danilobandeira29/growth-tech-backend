@@ -15,8 +15,36 @@ describe('Load All Post Service', () => {
 		)
 	})
 	it('should be able to load all post', async () => {
-		await loadAllPostService.execute()
+		const allPost = [
+			{
+				id: 1,
+				userId: 10,
+				user: {
+					name: 'Danilo Bandeira',
+					company: {
+						name: 'My company',
+					},
+				},
+				title: 'Hello, world',
+				body: 'Olaaaa',
+			},
+			{
+				id: 2,
+				userId: 10,
+				user: {
+					name: 'Danilo Bandeira',
+					company: {
+						name: 'My company',
+					},
+				},
+				title: 'Hello, world',
+				body: 'Olá, mundo!!',
+			},
+		]
 
+		const allPostResponse = await loadAllPostService.execute()
+
+		expect(allPostResponse).toMatchObject(allPost)
 		expect(spyFindAllFromFakeLoadAllPostRepository).toHaveBeenCalledTimes(1)
 	})
 })
