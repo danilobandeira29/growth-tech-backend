@@ -72,6 +72,7 @@ describe('Create User Service', () => {
 		}
 
 		await expect(createPostService.execute(newPost)).rejects.toThrowError()
+		expect(spyCreateFromFakePostRepository).toHaveBeenCalledTimes(0)
 		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledTimes(1)
 		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledWith(
 			newPost.userId,
