@@ -9,8 +9,13 @@ export class PostIndexController
 	async index(): Promise<HttpResponse> {
 		const allPost = await this.loadAllPostService.execute()
 
+		const allPostFormatted = allPost.map(post => ({
+			...post,
+			user: { name: post.user.name, company: { name: post.user.company.name } },
+		}))
+
 		return {
-			data: allPost,
+			data: allPostFormatted,
 			statusCode: 200,
 		}
 	}
