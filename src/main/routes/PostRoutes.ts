@@ -12,5 +12,5 @@ postRouter.get('/', async (request: Request, response: Response) => {
 
 	const { data, statusCode } = await postIndexController.index()
 
-	return response.status(statusCode).json(data)
+	return response.status(statusCode).json({ data })
 })

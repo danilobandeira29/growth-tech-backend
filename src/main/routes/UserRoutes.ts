@@ -15,7 +15,7 @@ userRouter.post('/', async (request: Request, response: Response) => {
 
 	const { data, statusCode } = await userCreateController.create(request)
 
-	return response.status(statusCode).json(data)
+	return response.status(statusCode).json({ data })
 })
 
 userRouter.post(
@@ -31,6 +31,6 @@ userRouter.post(
 
 		const { data, statusCode } = await postCreateController.create(request)
 
-		return response.status(statusCode).json(data)
+		return response.status(statusCode).json({ data })
 	},
 )
