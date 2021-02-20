@@ -88,29 +88,29 @@ Necessário:
 //request body
 
 {
-	"name": "John Doe",
-	"username": "John",
-	"email": "john@doe.com",
-	"phone": "(000) 00000-0000",
-	"address": {
-		"street": "my street",
-		"suite": "22",
-		"city": "my city",
-		"zipcode": "00000-000",
-		"geo": {
-			"lat": "90237103",
-			"lng": "38179832"
-		}
-	},
-	"website": "www.mywebsite.com",
-		"company": {
-			"name": "my company name",
-			"catchPhase": "something",
-			"bs": "something"
+  "name": "John Doe",
+  "username": "John",
+  "email": "john@doe.com",
+  "phone": "(000) 00000-0000",
+  "address": {
+    "street": "my street",
+    "suite": "22",
+    "city": "my city",
+    "zipcode": "00000-000",
+    "geo": {
+      "lat": "90237103",
+      "lng": "38179832"
+    }
+  },
+  "website": "www.mywebsite.com",
+    "company": {
+      "name": "my company name",
+      "catchPhase": "something",
+      "bs": "something"
 	}
 }
 
-//response success, statusCode 200
+//response success, statusCode: 200
 {
   "data": {
     "name": "John Doe",
@@ -138,7 +138,7 @@ Necessário:
   "updated_at": "2021-02-20T15:09:50.000Z"
 }
 
-//ou response error, statusCode 400
+//ou response error, statusCode: 400
 {
   "data": {
     "error": "Email is already used!"
@@ -154,7 +154,7 @@ Necessário:
   "body": "My post body"
 }
 
-//response success, statusCode 200
+//response success, statusCode: 200
 {
   "data": {
     "userId": 1,
@@ -166,7 +166,7 @@ Necessário:
   }
 }
 
-//or response error, statusCode 400
+//or response error, statusCode: 400
 {
   "data": {
     "error": "User not found"
@@ -178,7 +178,7 @@ Necessário:
 ```json
 // request sem body
 
-//response sucess, statusCode 200
+//response sucess, statusCode: 200
 {
   "data": [
     {
@@ -198,7 +198,7 @@ Necessário:
   ]
 }
 
-//response sucess mas sem dados, statusCode 200
+//response sucess mas sem dados, statusCode: 200
 {
   "data": []
 }
