@@ -46,7 +46,7 @@ export class FakeLoadAllPostRepository
 	] as OutputLoadAllPostRepository[]
 
 	async findAll(): Promise<OutputLoadAllPostRepository[]> {
-		const allPostWithUserNameAndCompany = this.allPost.map(post => {
+		const allPostWithUser = this.allPost.map(post => {
 			const user = this.users.find(item => item.id === post.userId)
 
 			if (!user) {
@@ -59,6 +59,6 @@ export class FakeLoadAllPostRepository
 			}
 		})
 
-		return allPostWithUserNameAndCompany
+		return allPostWithUser
 	}
 }
