@@ -17,7 +17,9 @@ export class UserCreateController
 			}
 		} catch (error) {
 			return {
-				data: error.message,
+				data: {
+					error: error.message,
+				},
 				statusCode: 400,
 			}
 		}

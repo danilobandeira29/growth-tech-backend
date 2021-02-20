@@ -22,7 +22,9 @@ export class PostCreateController
 			}
 		} catch (error) {
 			return {
-				data: error.message,
+				data: {
+					error: error.message,
+				},
 				statusCode: 400,
 			}
 		}
