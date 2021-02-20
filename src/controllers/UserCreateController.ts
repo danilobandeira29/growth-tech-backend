@@ -3,7 +3,7 @@ import { HttpRequest } from './dtos/HttpRequest'
 import { HttpResponse } from './dtos/HttpResponse'
 import { AbstractCreateController } from './interfaces/AbstractCreateController'
 
-export class UserController
+export class UserCreateController
 	implements AbstractCreateController<HttpRequest, HttpResponse> {
 	constructor(private readonly createUserService: AbstractCreateUser) {}
 
