@@ -12,7 +12,9 @@ export class LoadAllPostRepositoryTypeORM
 	}
 
 	async findAll(): Promise<OutputLoadAllPostRepository[]> {
-		const allPost = await this.ormRepository.find()
+		const allPost = await this.ormRepository.find({
+			relations: ['user'],
+		})
 
 		return allPost
 	}
