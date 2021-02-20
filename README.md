@@ -8,17 +8,18 @@
 - [Rotas](#-Rotas)
 
 ## Sobre
-Essa aplicação permite criação de usuário, criação de post e listagem de usuário.
+Essa aplicação permite criação de usuário, criação de post e listagem de post dos usuários.
 
 ## Desafios
 - [x] Fazer essa aplicação em 2 dias.
-
-**Não compartilhar!**
+- [x] Aplicação de TDD
+- [x] Aplicar alguns conceitos do SOLID
 
 ## Tecnologias
 - NodeJS
 - ExpressJS
 - Typescript
+- TDD
 - SOLID
 - Jest
 - TypeORM(MySQL)
@@ -31,7 +32,7 @@ Essa aplicação permite criação de usuário, criação de post e listagem de 
 ## Banco de Dados
 Necessário:
 
-	- MySQL
+- MySQL
 
 - Como o MySQL no computador, configurar o arquivo `./ormconfig.json`
 
@@ -56,20 +57,20 @@ Necessário:
 ```
 - **port**: porta default do MySQL, ou utilizar a porta que condiz com a utilizada na sua instância do MySQL
 - **username**: username default do MySQL, ou utilizar o username que condiz com o utilizado na sua instância do MySQL
-- **password**: caso seu usuário do MySQL possua um password, basta adicionar um atributo `password` com o valor equivalente a sua senha do usuário do MySQL
+- **password**: caso seu usuário do MySQL possua um password, basta adicionar um atributo `password` com o valor equivalente a sua senha de usuário do MySQL
 - **database**: deve ser criado um banco de dados na instância do MySQL de mesmo nome
 
 ## Inicializando o Projeto
 - Abra o terminal na pasta do projeto e execute:
 ```bash
-  ## inicializar o projeto (ou você pode executar 'npm dev')
+  ## inicializar o projeto (ou você pode executar 'npm run dev')
   $ yarn dev
 ```
 
 ## Testes
 - Abra o terminal na pasta do projeto e execute:
 ```bash
-  ## inicializar o projeto (ou você pode executar 'npm test')
+  ## inicializar o projeto (ou você pode executar 'npm run test')
   $ yarn test
 
 	## ou
@@ -109,38 +110,38 @@ Necessário:
 	}
 }
 
-//response success, statusCode: 200
+//response success, statusCode 200
 {
   "data": {
     "name": "John Doe",
-		"username": "John",
-		"email": "john@doe.com",
-		"phone": "(000) 00000-0000",
-		"address": {
-		"street": "my street",
-		"suite": "22",
-		"city": "my city",
-		"zipcode": "00000-000",
-		"geo": {
-			"lat": "90237103",
-			"lng": "38179832"
-		}
+    "username": "John",
+    "email": "john@doe.com",
+    "phone": "(000) 00000-0000",
+    "address": {
+    "street": "my street",
+    "suite": "22",
+    "city": "my city",
+    "zipcode": "00000-000",
+    "geo": {
+      "lat": "90237103",
+      "lng": "38179832"
+    }
+  },
+  "website": "www.mywebsite.com",
+    "company": {
+      "name": "my company name",
+      "catchPhase": "something",
+      "bs": "something"
 	},
-	"website": "www.mywebsite.com",
-		"company": {
-			"name": "my company name",
-			"catchPhase": "something",
-			"bs": "something"
-	},
-	"id": 1,
-	"created_at": "2021-02-20T15:09:50.000Z",
-	"updated_at": "2021-02-20T15:09:50.000Z"
+  "id": 1,
+  "created_at": "2021-02-20T15:09:50.000Z",
+  "updated_at": "2021-02-20T15:09:50.000Z"
 }
 
 //ou response error, statusCode 400
 {
-	"data": {
-		"error": "Email is already used!"
+  "data": {
+    "error": "Email is already used!"
 	}
 }
 ```
@@ -149,11 +150,11 @@ Necessário:
 ```json
 //request body
 {
-	"title": "My post title",
-	"body": "My post body"
+  "title": "My post title",
+  "body": "My post body"
 }
 
-//response success, statusCode: 200
+//response success, statusCode 200
 {
   "data": {
     "userId": 1,
@@ -165,7 +166,7 @@ Necessário:
   }
 }
 
-//or response error, statusCode: 400
+//or response error, statusCode 400
 {
   "data": {
     "error": "User not found"
@@ -177,7 +178,7 @@ Necessário:
 ```json
 // request sem body
 
-//response sucess, statusCode: 200
+//response sucess, statusCode 200
 {
   "data": [
     {
@@ -197,7 +198,7 @@ Necessário:
   ]
 }
 
-//response sucess mas sem dados, statusCode: 200
+//response sucess mas sem dados, statusCode 200
 {
   "data": []
 }
