@@ -6,6 +6,7 @@ let fakePostRepository: FakePostRepository
 let fakeUserRepository: FakeUserRepository
 let createPostService: CreatePostService
 let spyFindOneByIdFromFakeUserRepository: jest.SpyInstance
+let spyCreateFromFakePostRepository: jest.SpyInstance
 
 describe('Create User Service', () => {
 	beforeEach(() => {
@@ -19,6 +20,7 @@ describe('Create User Service', () => {
 			fakeUserRepository,
 			'findOneById',
 		)
+		spyCreateFromFakePostRepository = jest.spyOn(fakePostRepository, 'create')
 	})
 	it('should be able to create a new post', async () => {
 		const user = {
@@ -54,6 +56,8 @@ describe('Create User Service', () => {
 		const post = await createPostService.execute(newPost)
 
 		expect(Number.isNaN(post.id)).toBe(false)
+		expect(spyCreateFromFakePostRepository).toHaveBeenCalledTimes(1)
+		expect(spyCreateFromFakePostRepository).toHaveBeenCalledWith(newPost)
 		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledTimes(1)
 		expect(spyFindOneByIdFromFakeUserRepository).toHaveBeenCalledWith(
 			newPost.userId,
