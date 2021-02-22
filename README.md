@@ -67,8 +67,8 @@ Necessário:
   ## instalar as dependências(ou você pode executar 'npm install')
   $ yarn
 
-	## rodar as migrations
-	$ yarn typeorm migration:run
+  ## rodar as migrations
+  $ yarn typeorm migration:run
 ```
 
 ## Inicializando o Projeto
@@ -84,7 +84,7 @@ Necessário:
   ## inicializar o projeto (ou você pode executar 'npm run test')
   $ yarn test
 
-	## ou
+  ## gerar pasta com arquivo de cobertura de testes (ou você pode executar 'npm run test --coverage')
   $ yarn test --coverage
 ```
 - E abra `./coverage/lcov-report/index.hml` no seu navegador para ver a cobertura dos testes
