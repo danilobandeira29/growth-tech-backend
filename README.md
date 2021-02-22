@@ -11,11 +11,6 @@
 ## Sobre
 Essa aplicação permite criação de usuário, criação de post e listagem de post dos usuários.
 
-## Desafios
-- [x] Fazer essa aplicação em 2 dias.
-- [x] Aplicação de TDD
-- [x] Aplicar alguns conceitos do SOLID
-
 ## Tecnologias
 - NodeJS
 - ExpressJS
