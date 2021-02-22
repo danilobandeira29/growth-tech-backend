@@ -3,6 +3,7 @@
 - [Tecnologias](#-Tecnologias)
 - [Formatadores de Código](#-Formatadores-de-Código)
 - [Banco de Dados](#-Banco-de-Dados)
+- [Instalando as Dependências](#-Instalando-as-Dependências)
 - [Inicializando o Projeto](#-Inicializando-o-Projeto)
 - [Testes](#-Testes)
 - [Rotas](#-Rotas)
@@ -59,6 +60,16 @@ Necessário:
 - **username**: username default do MySQL, ou utilizar o username que condiz com o utilizado na sua instância do MySQL
 - **password**: caso seu usuário do MySQL possua um password, basta adicionar um atributo `password` com o valor equivalente a sua senha de usuário do MySQL
 - **database**: deve ser criado um banco de dados na instância do MySQL de mesmo nome
+
+## Instalando as Dependências
+- Abra o terminal na pasta do projeto e execute:
+```bash
+  ## instalar as dependências(ou você pode executar 'npm install')
+  $ yarn
+
+	## rodar as migrations
+	$ yarn setup
+```
 
 ## Inicializando o Projeto
 - Abra o terminal na pasta do projeto e execute:
