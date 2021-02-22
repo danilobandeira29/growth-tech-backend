@@ -68,7 +68,7 @@ Necessário:
   $ yarn
 
 	## rodar as migrations
-	$ yarn setup
+	$ yarn typeorm migration:run
 ```
 
 ## Inicializando o Projeto
